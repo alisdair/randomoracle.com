@@ -1,0 +1,82 @@
+html
+  font-size: 16px
+  line-height: 1.5em
+
+@media screen and (min-width: 400px)
+  html
+    font-size: 17px
+
+@media screen and (min-width: 500px)
+  html
+    font-size: 18px
+
+@media screen and (min-width: 600px)
+  html
+    font-size: 20px
+
+@media screen and (min-width: 700px)
+  html
+    font-size: 22px
+
+@media screen and (min-width: 800px)
+  html
+    font-size: 24px
+
+= default-font
+  font-family: 'adelle-sans', sans-serif
+  font-style: normal
+  font-weight: normal
+
+= bold-font
+  font-weight: 700
+  font-style: normal
+
+= italic-font
+  font-weight: 400
+  font-style: italic
+
+= bold-italic-font
+  font-weight: 800
+  font-style: italic
+
+= heading-font
+  font-family: 'adelle', sans-serif
+  font-weight: 600
+
+html
+  +default-font
+
+@for $i from 1 through 6
+  h#{$i}
+    +heading-font
+    margin-top: 2rem
+    margin-bottom: 1rem
+
+h1
+  margin-bottom: 2rem
+  font-size: 1.8rem
+  @media screen and (min-width: 360px)
+    font-size: 2rem
+
+h2
+  font-size: 1.5rem
+
+p
+  margin-top: 0
+  margin-bottom: 1rem
+
+a
+  text-decoration: none
+  +transition-property(color)
+  +transition-duration(200ms)
+  +link-colors($blue, $purple, $green)
+
+em, strong
+  +bold-font
+
+blockquote
+  +italic-font
+  margin: 0
+
+  em, strong
+    +bold-italic-font

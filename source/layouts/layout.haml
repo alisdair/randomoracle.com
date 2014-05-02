@@ -1,0 +1,16 @@
+!!!
+%html{lang: 'en'}
+  %head
+    %meta{name: 'viewport', content: 'initial-scale=1.0'}
+    %title= current_page.data.title || 'The Middleman'
+    - if current_page.data.description
+      %meta{name: 'description', content: current_page.data.description}
+    = stylesheet_link_tag 'all'
+    = javascript_include_tag 'all'
+    %link{rel: 'shortcut icon', href: '/images/favicon.ico'}
+    %script{type: 'text/javascript', src: '//use.typekit.net/ejd2jcw.js'}
+    :javascript
+      try{Typekit.load();}catch(e){}
+
+  %body{class: page_classes}
+    = yield
